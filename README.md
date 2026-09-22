@@ -1,68 +1,95 @@
 # SpendWise Budget Tracker
 
-SpendWise is a personal budget and expense tracker designed to help users organize and view their expenses in one place.
+SpendWise is a personal budget and expense tracker designed to help users organize and monitor their financial expenses.
 
-## Week 3: Visual Identity and CSS Design
+## Week 4: Dashboard Shell with CSS Grid and Flexbox
 
-For Week 3, I improved the visual design of the existing SpendWise Budget Tracker using CSS without adding new HTML structure or functionality.
+For Week 4, I rebuilt the SpendWise interface into a responsive dashboard shell using modern CSS layout techniques. The dashboard uses realistic static financial information without adding application functionality.
 
-### Color Palette
+### Dashboard Structure
 
-Light blue-gray background for the page
-Navy blue for headings and table headers
-Bright blue for the Add Expense button
-White backgrounds for the main content cards
-Light blue for alternating table rows
-Light gray borders for a clean appearance
+The dashboard contains:
 
-### Typography
+- **Sidebar/Navigation** — Provides navigation links for Dashboard, Expenses, Budget, Savings, and Reports.
+- **Header** — Displays the dashboard title and a welcome message.
+- **Financial Cards** — Six cards display static financial information for Food, Transport, Rent, Entertainment, Savings, and Utilities.
 
-Poppins is used for main headings and table headings.
-Open Sans is used for body text, labels, form fields, buttons, and table content.
-The two fonts create a clear visual hierarchy and consistent appearance.
+### CSS Grid
 
-### Add Expense Form
+CSS Grid is used for the overall dashboard layout.
 
-The Add Expense form was styled with:
+The desktop layout contains:
 
-Padding and spacing
-Borders
-Rounded corners
-Consistent fonts
-Styled input fields and category selection
-Focus effects
-A blue Add Expense button with a hover effect
+- A fixed-width sidebar.
+- A flexible main content area.
+- A three-column grid for the six financial cards.
 
-### Expense Table
+On smaller screens, the layout changes to a single-column structure.
 
-The expense table was improved with:
+### Flexbox
 
-Borders around cells
-Comfortable cell padding
-A navy table header
-White header text
-Alternating row colors
-A hover effect for table rows
+Flexbox is used inside:
 
-### CSS Box Model
+- The sidebar
+- The navigation menu
+- The dashboard header
+- Each financial card
 
-The page uses the CSS box model through:
+This allows the content to be aligned and spaced consistently.
 
-Margins
-Padding
-Borders
-Border radius
-Box shadows
+### CSS Custom Properties
 
-Distinct card-style sections were created for:
+The dashboard theme is controlled using CSS variables defined in `:root`.
 
-The main page heading
-The Add Expense form
-The Your Expenses table
+The variables include:
+
+- Brand color
+- Accent color
+- Surface/background color
+- Primary text color
+- Secondary text color
+- Border color
+
+Using CSS variables makes the design easier to maintain and customize.
+
+### Responsive Design
+
+A media query is used for screens below 768px.
+
+On smaller screens:
+
+- The sidebar and main content become a single-column layout.
+- The six financial cards become one card per row.
+- The dashboard header changes to a vertical layout.
+- Navigation items wrap to fit smaller screens.
+
+The responsive layout was verified using Chrome DevTools Device Toolbar.
+
+### Card Micro-interactions
+
+The financial cards include hover and keyboard focus effects.
+
+When a card is hovered over or receives keyboard focus:
+
+- It moves slightly upward.
+- A subtle box shadow appears.
+- The transition lasts 200 milliseconds.
+
+These interactions provide visual feedback while keeping the interface simple.
+
+### Dark Theme
+
+A dark theme was added as a stretch goal using:
+
+```css
+@media (prefers-color-scheme: dark)
+```
+
+The dark theme changes the CSS custom property values while keeping the same dashboard structure and layout.
 
 ## Files
 
-`index.html` — Structure and content of the Budget Tracker
-`style.css` — Visual design and styling
-`README.md` — Project documentation
-`budget-logo.svg` — Budget Tracker logo
+- `index.html` — Contains the dashboard structure, sidebar, header, navigation, and six financial cards.
+- `style.css` — Contains the dashboard layout, Grid and Flexbox rules, theme variables, responsive design, animations, and dark theme.
+- `README.md` — Documents the Week 4 dashboard implementation.
+- `budget-logo.svg` — Provides the SpendWise logo.
