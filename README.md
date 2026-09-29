@@ -2,94 +2,71 @@
 
 SpendWise is a personal budget and expense tracker designed to help users organize and monitor their financial expenses.
 
-## Week 4: Dashboard Shell with CSS Grid and Flexbox
+## Week 5–6: JavaScript Foundation
 
-For Week 4, I rebuilt the SpendWise interface into a responsive dashboard shell using modern CSS layout techniques. The dashboard uses realistic static financial information without adding application functionality.
+For Week 5–6, I added JavaScript functionality to transform SpendWise from a static dashboard into an application that can process budgeting data.
 
-### Dashboard Structure
+The JavaScript foundation allows users to enter their monthly budget and different expense amounts. The application then calculates the total expenses and remaining balance and displays the results in the browser console.
 
-The dashboard contains:
+## JavaScript Concepts Implemented
 
-- **Sidebar/Navigation** — Provides navigation links for Dashboard, Expenses, Budget, Savings, and Reports.
-- **Header** — Displays the dashboard title and a welcome message.
-- **Financial Cards** — Six cards display static financial information for Food, Transport, Rent, Entertainment, Savings, and Utilities.
+The project demonstrates the following JavaScript concepts:
 
-### CSS Grid
+- Variables
+- Numbers and strings
+- User input
+- Type conversion
+- Conditional validation
+- Functions
+- Calculations
+- Console output
+- Template literals
 
-CSS Grid is used for the overall dashboard layout.
+## Variables
 
-The desktop layout contains:
+Variables are used to store important budgeting information.
 
-- A fixed-width sidebar.
-- A flexible main content area.
-- A three-column grid for the six financial cards.
+Examples include:
 
-On smaller screens, the layout changes to a single-column structure.
+- `monthlyBudget`
+- `foodExpense`
+- `transportExpense`
+- `rentExpense`
+- `entertainmentExpense`
+- `utilitiesExpense`
+- `savingsAmount`
 
-### Flexbox
+The variables store numerical values that are used in the budget calculations.
 
-Flexbox is used inside:
+## User Input
 
-- The sidebar
-- The navigation menu
-- The dashboard header
-- Each financial card
+SpendWise collects user information using JavaScript `prompt()`.
 
-This allows the content to be aligned and spaced consistently.
+The user enters:
 
-### CSS Custom Properties
+- Monthly budget
+- Food expenses
+- Transport expenses
+- Rent expenses
+- Entertainment expenses
+- Utilities expenses
+- Savings amount
 
-The dashboard theme is controlled using CSS variables defined in `:root`.
+The `Number()` function converts the input from text into numerical values so that JavaScript can perform calculations.
 
-The variables include:
+## Input Validation
 
-- Brand color
-- Accent color
-- Surface/background color
-- Primary text color
-- Secondary text color
-- Border color
+A reusable `getNumberInput()` function checks whether the user enters a valid number.
 
-Using CSS variables makes the design easier to maintain and customize.
+If the user enters invalid data or a negative number, the application asks the user to enter the information again.
 
-### Responsive Design
+## Budget Calculations
 
-A media query is used for screens below 768px.
+SpendWise calculates the total expenses by adding all expense categories together.
 
-On smaller screens:
+The application then calculates the remaining balance by subtracting total expenses from the monthly budget.
 
-- The sidebar and main content become a single-column layout.
-- The six financial cards become one card per row.
-- The dashboard header changes to a vertical layout.
-- Navigation items wrap to fit smaller screens.
+For example:
 
-The responsive layout was verified using Chrome DevTools Device Toolbar.
-
-### Card Micro-interactions
-
-The financial cards include hover and keyboard focus effects.
-
-When a card is hovered over or receives keyboard focus:
-
-- It moves slightly upward.
-- A subtle box shadow appears.
-- The transition lasts 200 milliseconds.
-
-These interactions provide visual feedback while keeping the interface simple.
-
-### Dark Theme
-
-A dark theme was added as a stretch goal using:
-
-```css
-@media (prefers-color-scheme: dark)
-```
-
-The dark theme changes the CSS custom property values while keeping the same dashboard structure and layout.
-
-## Files
-
-- `index.html` — Contains the dashboard structure, sidebar, header, navigation, and six financial cards.
-- `style.css` — Contains the dashboard layout, Grid and Flexbox rules, theme variables, responsive design, animations, and dark theme.
-- `README.md` — Documents the Week 4 dashboard implementation.
-- `budget-logo.svg` — Provides the SpendWise logo.
+```text
+Remaining Balance = Monthly Budget - Total Expenses
