@@ -317,6 +317,21 @@ button:hover {
     .dashboard-cards {
         grid-template-columns: 1fr;
     }
+        #budget-form {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .form-group {
+        width: 100%;
+    }
+
+    #add-expense-btn {
+        width: 100%;
+    }
+        .budget-summary {
+        grid-template-columns: 1fr;
+    }
 }
 @media (prefers-color-scheme: dark) {
     :root {
@@ -328,4 +343,113 @@ button:hover {
         --secondary-text: #d1d5db;
         --border-color: #374151;
     }
+}
+/* ===== Interactive Budget Section ===== */
+
+.interactive-section {
+    background-color: var(--surface-color);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 25px;
+    margin-top: 25px;
+}
+
+.interactive-header h2 {
+    font-family: "Poppins", sans-serif;
+    color: var(--brand-color);
+    margin: 0 0 8px;
+}
+
+.interactive-header p {
+    color: var(--secondary-text);
+    margin: 0 0 25px;
+}
+
+#budget-form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    align-items: end;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    flex: 1;
+    min-width: 180px;
+}
+
+.form-group label {
+    font-weight: 600;
+    color: var(--primary-text);
+}
+
+.form-group input,
+.form-group select {
+    padding: 12px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    font-family: "Open Sans", sans-serif;
+    font-size: 15px;
+    background-color: var(--surface-color);
+    color: var(--primary-text);
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    outline: 2px solid var(--accent-color);
+}
+
+#add-expense-btn {
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    background-color: var(--accent-color);
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+#add-expense-btn:hover,
+#add-expense-btn:focus {
+    background-color: var(--brand-color);
+    transform: translateY(-2px);
+}
+
+.budget-message {
+    margin-top: 20px;
+    padding: 12px;
+    border-radius: 8px;
+    font-weight: 600;
+}
+/* ===== Budget Summary ===== */
+
+.budget-summary {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    margin-top: 25px;
+}
+
+.summary-item {
+    background-color: var(--background-color);
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    padding: 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.summary-item span {
+    color: var(--secondary-text);
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.summary-item strong {
+    color: var(--accent-color);
+    font-size: 22px;
 }
